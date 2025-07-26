@@ -1,0 +1,135 @@
+# Page snapshot
+
+```yaml
+- region "Notifications alt+T"
+- navigation:
+  - heading "Ads Pro" [level=1]
+  - paragraph: Platforms Analysis
+  - button "Dashboard"
+  - button "Campaigns"
+  - button "Analytics"
+  - button "Funnel Analysis"
+  - textbox "Αναζήτηση..."
+  - button
+  - button "Toggle theme"
+  - button "Αποσύνδεση"
+  - button "U"
+- text: Menu
+- list:
+  - listitem:
+    - link "Dashboard":
+      - /url: /
+  - listitem:
+    - link "Campaigns":
+      - /url: /campaigns
+  - listitem:
+    - link "Analytics":
+      - /url: /analytics
+  - listitem:
+    - link "Campaign Analysis":
+      - /url: /campaign-analysis
+  - listitem:
+    - link "Real-Time":
+      - /url: /realtime
+  - listitem:
+    - link "Funnel Analysis":
+      - /url: /funnel-analysis
+  - listitem:
+    - link "Analytics Studio":
+      - /url: /analytics-studio
+- text: Quick Actions
+- list:
+  - listitem:
+    - button "Refresh"
+    - button
+  - listitem:
+    - button "Export"
+- list:
+  - listitem:
+    - link "Settings":
+      - /url: /settings
+- main:
+  - main:
+    - navigation:
+      - link "Dashboard":
+        - /url: /
+      - text: Analytics
+    - text: Analytics
+    - heading "Analytics" [level=1]
+    - paragraph: Αναλυτικά στατιστικά και αναφορές για τις καμπάνιες σας
+    - combobox: analytics.timeRange30d
+    - button "Filters"
+    - button "Εξαγωγή"
+    - text: 8.2%
+    - paragraph: Impressions
+    - paragraph: 93,000
+    - text: 3.24%
+    - paragraph: Clicks
+    - paragraph: 2,630
+    - text: 15.7%
+    - paragraph: Conversions
+    - paragraph: "152"
+    - text: 12.5%
+    - paragraph: Revenue
+    - paragraph: €15,200
+    - tablist:
+      - tab "Sales KPIs"
+      - tab "Funnel Analysis"
+      - tab "Advanced" [selected]
+    - tabpanel "Advanced":
+      - region "Notifications alt+T"
+      - heading "Προηγμένα Analytics" [level=2]
+      - paragraph: Βαθιά ανάλυση με προηγμένα charts και insights
+      - button "Καθαρισμός Φίλτρων"
+      - button "Εξαγωγή"
+      - text: "Περίοδος:"
+      - button "Ιούν 19, 2025 - Ιούλ 19, 2025"
+      - text: "Καμπάνια:"
+      - combobox: Όλες οι Καμπάνιες
+      - text: "Συσκευή:"
+      - combobox: Όλες οι Συσκευές
+      - text: "Ηλικία:"
+      - combobox: Όλες οι Ηλικίες
+      - text: "Περιοχή:"
+      - combobox: Όλες οι Περιοχές
+      - tablist:
+        - tab "Επισκόπηση" [selected]
+        - tab "Απόδοση"
+        - tab "Κοινό"
+        - tab "Καμπάνιες"
+        - tab "Γεωγραφικά"
+        - tab "Χρονικά"
+        - tab "AI Insights"
+        - tab "Recommendations"
+      - tabpanel "Επισκόπηση":
+        - heading "Συνολικό ROAS" [level=3]
+        - text: 0.00x
+        - paragraph: +18.5% από την προηγούμενη περίοδο
+        - heading "Μέση Μετατροπή" [level=3]
+        - text: 0.00%
+        - paragraph: +12.3% από την προηγούμενη περίοδο
+        - heading "Κόστος ανά Μετατροπή" [level=3]
+        - text: €0.00
+        - paragraph: "-8.2% από την προηγούμενη περίοδο"
+        - heading "Ποιότητα Score" [level=3]
+        - text: 8.5/10
+        - paragraph: +0.8 από την προηγούμενη περίοδο
+        - heading "Τάση Απόδοσης" [level=3]
+        - paragraph: Ημερήσια μετρικά απόδοσης
+        - application:
+          - list:
+            - listitem:
+              - img "Έσοδα legend icon"
+              - text: Έσοδα
+            - listitem:
+              - img "Δαπάνη legend icon"
+              - text: Δαπάνη
+          - application
+- button "Βοήθεια & Υποστήριξη"
+- heading "Performance Monitor" [level=3]
+- button "Pause"
+- button "Clear"
+- text: "Renders: 1 Avg: 4.0ms Performance Score 100%"
+- progressbar
+- text: "Last render: 12:47:45 PM"
+```

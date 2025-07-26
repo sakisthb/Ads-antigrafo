@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1751451163925,
+      "tag": "0000_fearless_secret_warriors",
+      "breakpoints": true
+    }
+  ]
+}

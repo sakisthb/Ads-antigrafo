@@ -1,0 +1,110 @@
+# Page snapshot
+
+```yaml
+- region "Notifications alt+T"
+- navigation:
+  - heading "Ads Pro" [level=1]
+  - paragraph: Platforms Analysis
+  - button "Dashboard"
+  - button "Campaigns"
+  - button "Analytics"
+  - button "Funnel Analysis"
+  - textbox "Αναζήτηση..."
+  - button
+  - button "Toggle theme"
+  - button "Αποσύνδεση"
+  - button "U"
+- text: Menu
+- list:
+  - listitem:
+    - link "Dashboard":
+      - /url: /
+  - listitem:
+    - link "Campaigns":
+      - /url: /campaigns
+  - listitem:
+    - link "Analytics":
+      - /url: /analytics
+  - listitem:
+    - link "Campaign Analysis":
+      - /url: /campaign-analysis
+  - listitem:
+    - link "Real-Time":
+      - /url: /realtime
+  - listitem:
+    - link "Funnel Analysis":
+      - /url: /funnel-analysis
+  - listitem:
+    - link "Analytics Studio":
+      - /url: /analytics-studio
+- text: Quick Actions
+- list:
+  - listitem:
+    - button "Refresh"
+    - button
+  - listitem:
+    - button "Export"
+- list:
+  - listitem:
+    - link "Settings":
+      - /url: /settings
+- main:
+  - main:
+    - text: Dashboard / Campaigns Campaign Management
+    - heading "Campaigns" [level=1]
+    - paragraph: Manage and monitor your campaigns
+    - button "Export"
+    - button "New Campaign"
+    - text: 12.5%
+    - paragraph: Total Cost
+    - paragraph: €5,000
+    - text: 8.2%
+    - paragraph: Impressions
+    - paragraph: 66,818
+    - text: 3.24%
+    - paragraph: CTR
+    - paragraph: 2.45%
+    - text: 15.7%
+    - paragraph: Clicks
+    - paragraph: 1,637
+    - textbox "Search campaigns..."
+    - combobox: All Statuses
+    - combobox: All Platforms
+    - heading "Κυριακή Εκπτώσεις 2024" [level=3]
+    - text: Active facebook
+    - button
+    - text: "Budget €5,000 Spent: €3,200 64.0%"
+    - paragraph: 29,871
+    - paragraph: Impressions
+    - paragraph: "676"
+    - paragraph: Clicks
+    - paragraph: 2.26%
+    - paragraph: CTR
+    - paragraph: €4.73
+    - paragraph: CPC
+    - text: 1/6/2024 - Invalid Date
+    - button "Analytics"
+    - button "Edit"
+    - heading "Ενεργειακή Ευαισθητοποίηση Q2" [level=3]
+    - text: Active facebook
+    - button
+    - text: "Budget €3,000 Spent: €1,800 60.0%"
+    - paragraph: 36,947
+    - paragraph: Impressions
+    - paragraph: "961"
+    - paragraph: Clicks
+    - paragraph: 2.60%
+    - paragraph: CTR
+    - paragraph: €1.87
+    - paragraph: CPC
+    - text: 1/4/2024 - Invalid Date
+    - button "Analytics"
+    - button "Edit"
+- button "Βοήθεια & Υποστήριξη"
+- heading "Performance Monitor" [level=3]
+- button "Pause"
+- button "Clear"
+- text: "Renders: 1 Avg: 1.1ms Memory: 33.5MB Performance Score 100%"
+- progressbar
+- text: "Last render: 12:46:24 PM"
+```

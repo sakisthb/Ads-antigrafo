@@ -1,0 +1,61 @@
+# Page snapshot
+
+```yaml
+- region "Notifications alt+T"
+- navigation:
+  - heading "Ads Pro" [level=1]
+  - paragraph: Platforms Analysis
+  - button "Dashboard"
+  - button "Campaigns"
+  - button "Analytics"
+  - button "Funnel Analysis"
+  - textbox "Αναζήτηση..."
+  - button
+  - button "Toggle theme"
+  - button "Αποσύνδεση"
+  - button "U"
+- text: Menu
+- list:
+  - listitem:
+    - link "Dashboard":
+      - /url: /
+  - listitem:
+    - link "Campaigns":
+      - /url: /campaigns
+  - listitem:
+    - link "Analytics":
+      - /url: /analytics
+  - listitem:
+    - link "Campaign Analysis":
+      - /url: /campaign-analysis
+  - listitem:
+    - link "Real-Time":
+      - /url: /realtime
+  - listitem:
+    - link "Funnel Analysis":
+      - /url: /funnel-analysis
+  - listitem:
+    - link "Analytics Studio":
+      - /url: /analytics-studio
+- text: Quick Actions
+- list:
+  - listitem:
+    - button "Refresh"
+    - button
+  - listitem:
+    - button "Export"
+- list:
+  - listitem:
+    - link "Settings":
+      - /url: /settings
+- main:
+  - main:
+    - paragraph: Φόρτωση Dashboard...
+- button "Βοήθεια & Υποστήριξη"
+- heading "Performance Monitor" [level=3]
+- button "Pause"
+- button "Clear"
+- text: "Renders: 1 Avg: 3.0ms Performance Score 100%"
+- progressbar
+- text: "Last render: 12:47:21 PM"
+```

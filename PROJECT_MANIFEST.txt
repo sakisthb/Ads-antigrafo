@@ -1,0 +1,369 @@
+# Εξειδικευμένο Prompt για Ads Pro - Meta Ads Application
+
+## 📊 ΠΕΡΙΓΡΑΦΗ ΕΦΑΡΜΟΓΗΣ
+Αυτή είναι η εφαρμογή **Ads Pro - Platforms Analysis** που περιλαμβάνει:
+- **Frontend**: React + TypeScript + Vite + Tailwind + ShadCN
+- **Backend**: Hono API + Node.js + PostgreSQL + Drizzle ORM  
+- **Auth**: Firebase Authentication + Google Sign-In
+- **Integration**: Facebook/Meta Ads API
+- **Structure**: Monorepo με pnpm workspaces (ui/, server/, database-server/)
+
+## 💰 **ΚΡΙΣΙΜΟ: ΕΜΠΟΡΙΚΗ ΕΦΑΡΜΟΓΗ ΜΕ SUBSCRIPTIONS**
+
+⚠️ **ΑΚΡΩΣ ΕΠΙΚΙΝΔΥΝΟ** - Αυτή είναι εφαρμογή που **ΠΟΥΛΑΜΕ** με subscription model!
+
+### 🔥 **ΖΩΤΙΚΗΣ ΣΗΜΑΣΙΑΣ ΚΑΝΟΝΕΣ:**
+1. **ΚΑΜΙΑ αλλαγή** στο production χωρίς testing
+2. **ΚΑΜΙΑ αλλαγή** στο Facebook API χωρίς approval  
+3. **ΚΑΜΙΑ αλλαγή** στο authentication χωρίς backup
+4. **ΚΑΜΙΑ αλλαγή** στη database schema χωρίς migration
+5. **ΚΑΜΙΑ αλλαγή** στα subscriptions χωρίς validation
+
+### 💸 **ΕΠΙΧΕΙΡΗΜΑΤΙΚΟΙ ΚΙΝΔΥΝΟΙ:**
+- **Χάσιμο πελατών** αν πέσει η εφαρμογή
+- **Απώλεια εσόδων** αν χαλάσει το subscription system
+- **Νομικά προβλήματα** αν χάσουμε customer data
+- **Reputation damage** αν παραβιάσουμε Facebook terms
+- **Refunds & chargebacks** αν δεν λειτουργεί το product
+
+## 🚫 ΚΡΙΣΙΜΟΙ ΚΑΝΟΝΕΣ - ΔΙΑΒΑΣΕ ΠΡΩΤΑ
+
+### 🚫 ΑΠΟΦΥΓΗ LOOPS & ΕΠΑΝΑΛΗΨΕΩΝ - PRODUCTION READY
+1. **ΣΤΑΜΑΤΑ αμέσως** αν βρεις ότι επαναλαμβάνεις την ίδια ενέργεια
+2. **ΜΗΝ** κάνεις την ίδια αλλαγή δύο φορές  
+3. **ΕΛΕΓΧΕ** πάντα τι έχεις ήδη κάνει πριν προχωρήσεις
+4. **ΡΩΤΑ** αν δεν είσαι σίγουρος για το επόμενο βήμα
+5. 🔥 **ΠΑΥΣΗ ΑΜΕΣΩΣ** αν κάτι μπορεί να επηρεάσει paying customers
+6. 🔥 **ΖΗΤΑ ΕΓΚΡΙΣΗ** για οποιαδήποτε αλλαγή στο production environment
+
+### 🔍 ΔΙΑΔΙΚΑΣΙΑ ΕΡΓΑΣΙΑΣ - COMMERCIAL GRADE
+Πάντα να ακολουθείς αυτή τη σειρά:
+
+1. **RISK ASSESSMENT**: Τι μπορεί να χαλάσει;
+2. **CUSTOMER IMPACT**: Θα επηρεαστούν paying users;
+3. **BUSINESS CONTINUITY**: Θα διακοπεί η υπηρεσία;
+4. **ΑΝΑΛΥΣΗ**: Κατανόησε τι ζητάω
+5. **ΣΧΕΔΙΑΣΜΟΣ**: Φτιάξε ένα σχέδιο δράσης
+6. **ΕΛΕΓΧΟΣ**: Δες τι υπάρχει ήδη
+7. **TESTING PLAN**: Πώς θα δοκιμάσω;
+8. **ΥΛΟΠΟΙΗΣΗ**: Κάνε τις αλλαγές (development only)
+9. **ΕΠΙΒΕΒΑΙΩΣΗ**: Έλεγξε ότι λειτουργεί
+10. **DEPLOYMENT STRATEGY**: Πώς θα πάει στο production;
+11. **ROLLBACK PLAN**: Τι κάνω αν χαλάσει;
+12. **ΑΝΑΦΟΡΑ**: Πες μου τι έκανες
+
+## 🔧 ΕΚΤΕΝΗΣ ΕΛΕΓΧΟΣ ΚΩΔΙΚΑ - ADS PRO SPECIFIC
+
+### Πριν κάνεις ΟΠΟΙΑΔΗΠΟΤΕ αλλαγή:
+
+#### 1. ΕΛΕΓΧΟΣ ΔΟΜΗΣ ΕΦΑΡΜΟΓΗΣ
+```
+ΔΟΜΗ MONOREPO:
+├── ui/ (React Frontend)
+│   ├── src/components/ (ShadCN UI components)
+│   ├── src/lib/ (Firebase config, API communication)
+│   ├── package.json (React dependencies)
+│   └── vite.config.ts
+├── server/ (Hono Backend)
+│   ├── src/schema/ (Drizzle database schema)
+│   ├── src/middleware/ (Auth middleware)
+│   ├── .env (Environment variables)
+│   └── wrangler.toml (Cloudflare config)
+├── database-server/ (Database utilities)
+└── package.json (Root workspace config)
+
+ΕΛΕΓΧΟΣ:
+- Είμαι στο σωστό directory; (ui/, server/, ή root;)
+- Ποιο package.json χρειάζομαι;
+- Υπάρχουν τα σωστά dependencies;
+- Είναι τα environment variables ρυθμισμένα;
+```
+
+#### 2. FACEBOOK/META ADS API ΕΛΕΓΧΟΣ - ΕΜΠΟΡΙΚΑ ΚΡΙΣΙΜΟΣ!
+```
+🔥 ΑΚΡΩΣ ΕΠΙΚΙΝΔΥΝΟ: Επαγγελματικοί διαφημιστικοί λογαριασμοί πελατών!
+
+CUSTOMERS' FACEBOOK ACCOUNTS AT RISK:
+- Ενας λάθος κώδικας = ban όλων των πελατών
+- Rate limit violation = service disruption για όλους
+- Token mismanagement = data breach lawsuit
+- API abuse = permanent Facebook suspension
+
+ΥΠΟΧΡΕΩΤΙΚΟΣ ΕΛΕΓΧΟΣ FACEBOOK INTEGRATION:
+- Environment Variables (.env):
+  ✓ FACEBOOK_APP_ID (production certified?)
+  ✓ FACEBOOK_APP_SECRET (secure?)
+  ✓ FACEBOOK_ACCESS_TOKEN (valid for all customers?)
+  ✓ FACEBOOK_AD_ACCOUNT_ID (multi-tenant support?)
+  ✓ VITE_API_URL (production URL?)
+
+- Database Schema:
+  ✓ facebook_tokens table exists and encrypted
+  ✓ User authentication with subscription validation
+  ✓ Multi-customer token isolation
+  ✓ Token expiration monitoring
+  ✓ Audit logging enabled
+
+- API Safety (ΖΩΤΙΚΗΣ ΣΗΜΑΣΙΑΣ):
+  ✓ Rate limiting PER CUSTOMER (not global)
+  ✓ Safe API wrapper με enterprise error handling
+  ✓ Error handling για όλους τους Facebook errors
+  ✓ Timeout protection με graceful degradation
+  ✓ Retry logic με exponential backoff
+  ✓ Customer notification system για issues
+
+- Production Endpoints (ALL MUST WORK):
+  GET /api/v1/facebook/test
+  GET /api/v1/facebook/campaigns  
+  POST /api/v1/facebook/oauth/callback
+  GET /api/v1/facebook/account/insights
+  GET /api/v1/facebook/subscription/validate
+
+ΚΑΤΑΣΤΡΟΦΙΚΟΙ ΚΑΝΟΝΕΣ ΑΣΦΑΛΕΙΑΣ:
+🚫 ΜΗΝ παραβιάσεις ΠΟΤΕ τα Facebook rate limits
+🚫 ΜΗΝ κάνεις bulk operations χωρίς confirmation
+🚫 ΜΗΝ μοιραστείς tokens μεταξύ customers  
+🚫 ΜΗΝ αλλάξεις API calls χωρίς testing σε sandbox
+🚫 ΜΗΝ αφήσεις error logs με customer data
+✅ ΠΑΝΤΑ χρησιμοποίησε το certified safe wrapper
+✅ ΠΑΝΤΑ έλεγχε subscription status πριν API calls
+✅ ΠΑΝΤΑ κάνε audit log όλων των operations
+✅ ΠΑΝΤΑ isolate customer data
+```
+
+#### 3. FRONTEND SPECIFIC ΕΛΕΓΧΟΣ (ui/)
+```
+REACT + TYPESCRIPT ΕΛΕΓΧΟΣ:
+- Components structure: είναι στο ui/src/components/;
+- ShadCN imports: χρησιμοποιώ το σωστό path (@/components/ui/);
+- Tailwind classes: είναι valid utility classes;
+- Firebase auth: λειτουργεί το authentication;
+- API calls: χρησιμοποιώ το lib/serverComm.ts;
+
+VITE CONFIGURATION:
+- vite.config.ts ρυθμίσεις
+- Environment variables με VITE_ prefix
+- Build output στο dist/
+
+ΣΥΝΗΘΗ ΛΑΘΗ FRONTEND:
+❌ Wrong import paths για ShadCN
+❌ Missing VITE_ prefix στα env vars
+❌ Incorrect Tailwind class names
+❌ Firebase config issues
+❌ API base URL problems
+```
+
+#### 4. BACKEND SPECIFIC ΕΛΕΓΧΟΣ (server/)
+```
+HONO API ΕΛΕΓΧΟΣ:
+- API routes structure: /api/v1/
+- Authentication middleware working
+- Database connections (Drizzle ORM)
+- Facebook API integration
+- Environment variables loaded
+
+DRIZZLE ORM ΕΛΕΓΧΟΣ:
+- Schema files στο src/schema/
+- Database migrations applied
+- Table relationships correct
+- Connection string valid
+
+CLOUDFLARE WORKERS:
+- wrangler.toml configuration
+- Environment variables στο Cloudflare
+- Deployment settings
+
+ΣΥΝΗΘΗ ΛΑΘΗ BACKEND:
+❌ Missing database migrations
+❌ Incorrect API route paths  
+❌ Facebook API rate limit exceeded
+❌ Auth middleware not applied
+❌ Environment variables not loaded
+❌ CORS issues με frontend
+```
+
+## 💡 ΟΔΗΓΙΕΣ ΥΛΟΠΟΙΗΣΗΣ
+
+### ΣΕ ΚΑΘΕ ΒΗΜΑ:
+1. **ΕΞΗΓΗΣΕ** τι θα κάνεις
+2. **ΔΕΙΞΕ** τον κώδικα που θα αλλάξεις
+3. **ΥΛΟΠΟΙΗΣΕ** την αλλαγή
+4. **ΕΛΕΓΞΕ** αν λειτουργεί
+5. **ΑΝΑΦΕΡΕ** το αποτέλεσμα
+
+### ΜΟΡΦΗ ΑΠΑΝΤΗΣΗΣ:
+```
+🎯 ΣΤΟΧΟΣ: [Τι θέλω να κάνω]
+
+📋 ΣΧΕΔΙΟ:
+1. [Βήμα 1]
+2. [Βήμα 2]
+3. [Βήμα 3]
+
+🔍 ΕΛΕΓΧΟΣ ΥΠΑΡΧΟΝΤΟΣ ΚΩΔΙΚΑ:
+- [Τι βρήκα]
+- [Τι προβλήματα υπάρχουν]
+
+⚡ ΥΛΟΠΟΙΗΣΗ:
+[Ο κώδικας που θα προσθέσω/αλλάξω]
+
+✅ ΕΠΙΒΕΒΑΙΩΣΗ:
+[Τι έλεγξα και λειτουργεί]
+```
+
+## 🚨 ΣΥΝΗΘΗ ΛΑΘΗ ΠΟΥ ΠΡΕΠΕΙ ΝΑ ΑΠΟΦΥΓΕΙΣ
+
+### 1. IMPORTS & EXPORTS
+- Missing imports
+- Wrong import paths
+- Default vs named imports
+- Circular dependencies
+
+### 2. ASYNC OPERATIONS
+- Missing await
+- Unhandled promises
+- Race conditions
+- Memory leaks
+
+### 3. STATE MANAGEMENT
+- Direct state mutations
+- Missing state updates
+- Stale closures
+- Infinite re-renders
+
+### 4. EVENT HANDLING
+- Missing event listeners
+- Memory leaks από listeners
+- Wrong event binding
+- Missing cleanup
+
+### 5. TYPE ERRORS
+- Undefined variables
+- Wrong data types
+- Missing null checks
+- Array/Object access errors
+
+## 🔄 ΑΝΤΙ-LOOP ΜΗΧΑΝΙΣΜΟΣ
+
+### ΠΡΙΝ από κάθε ενέργεια, ΡΩΤΑ:
+1. "Έχω ήδη κάνει κάτι παρόμοιο;"
+2. "Αυτή η ενέργεια θα λύσει το πρόβλημα;"
+3. "Υπάρχει πιο απλός τρόπος;"
+4. "Έχω ελέγξει όλα τα σχετικά αρχεία;"
+
+### ΑΝ ΚΟΛΛΗΣΕΙΣ:
+1. **ΣΤΑΜΑΤΑ** την τρέχουσα προσέγγιση
+2. **ΕΞΗΓΗΣΕ** που κόλλησες
+3. **ΖΗΤΑ** διευκρίνιση
+4. **ΠΡΟΤΕΙΝΕ** εναλλακτική λύση
+
+## 📚 ADS PRO DEVELOPMENT COMMANDS
+
+### Root Commands (από root directory):
+```bash
+pnpm run dev                    # Start όλη την εφαρμογή
+pnpm connect:database          # Connect production database  
+pnpm connect:auth             # Connect production Firebase
+pnpm connection:status        # Check connection status
+```
+
+### Frontend Commands (cd ui/):
+```bash
+pnpm dev                      # Start React dev server
+pnpm build                    # Build για production
+npx shadcn-ui@latest add button  # Add ShadCN components
+```
+
+### Backend Commands (cd server/):
+```bash
+pnpm dev                      # Start Hono server
+pnpm db:push                  # Apply database changes
+pnpm run deploy              # Deploy to Cloudflare Workers
+```
+
+### Facebook API Testing:
+```bash
+# Test Facebook connection
+curl http://localhost:8787/api/v1/facebook/test
+
+# Check campaigns (requires auth)
+curl -H "Authorization: Bearer <token>" \
+     http://localhost:8787/api/v1/facebook/campaigns
+```
+
+## 🎯 COMMERCIAL ADS PRO ΠΡΟΤΕΡΑΙΟΤΗΤΕΣ & WORKFLOW
+
+### ΕΠΙΧΕΙΡΗΜΑΤΙΚΗ ΣΕΙΡΑ ΕΡΓΑΣΙΑΣ:
+1. 💰 **BUSINESS CONTINUITY** - Θα πέσει η υπηρεσία;
+2. 💸 **REVENUE PROTECTION** - Θα χάσουμε λεφτά;
+3. 👥 **CUSTOMER IMPACT** - Θα επηρεαστούν paying users;
+4. 🔒 **DATA SECURITY** - Είναι ασφαλή τα customer data;
+5. ⚖️ **LEGAL COMPLIANCE** - Παραβιάζουμε νόμους;
+6. 📱 **FACEBOOK API SAFETY** - Κινδυνεύουν οι λογαριασμοί;
+7. 🔐 **AUTHENTICATION** - Λειτουργεί η auth;
+8. 🗄️ **DATABASE INTEGRITY** - Είναι ασφαλής η βάση;
+9. 🔗 **API ENDPOINTS** - Δουλεύουν για όλους;
+10. 🎨 **FRONTEND** - UI improvements (τελευταία προτεραιότητα)
+
+### ΣΕ ΚΑΘΕ ΑΛΛΑΓΗ - COMMERCIAL CHECKLIST:
+```
+💼 BUSINESS IMPACT ASSESSMENT:
+- Πόσοι customers επηρεάζονται; 
+- Τι είναι το worst-case scenario;
+- Υπάρχει rollback plan;
+- Θα χρειαστούν refunds;
+
+🔍 PRE-CHECK:
+- Σε ποιο environment είμαι; (dev/staging/prod)
+- Σε ποιο directory είμαι; (ui/ ή server/;)
+- Τι subscription features επηρεάζω;
+- Τι Facebook API endpoints επηρεάζω;
+- Υπάρχει κίνδυνος για customer data;
+- Επηρεάζω την billing logic;
+
+⚡ IMPLEMENTATION - ΕΞΤΡΑ ΠΡΟΣΕΚΤΙΚΑ:
+- Κάνω την ελάχιστη απαραίτητη αλλαγή
+- Testing σε development environment μόνο
+- Ελέγχω αμέσως για errors στα logs
+- Test το Facebook API αν επηρεάστηκε  
+- Επιβεβαιώνω ότι η subscription validation δουλεύει
+- Ελέγχω ότι customer isolation λειτουργεί
+
+✅ COMMERCIAL VERIFICATION:
+- pnpm run dev τρέχει χωρίς errors;
+- Facebook test endpoint λειτουργεί;
+- Subscription validation working;
+- Customer data isolated;
+- Billing calculations correct;
+- Frontend συνδέεται με backend;
+- Δεν υπάρχουν TypeScript errors;
+- Logs clean από customer data;
+
+🚀 DEPLOYMENT READINESS:
+- Staging environment tested;
+- Rollback strategy documented;
+- Customer communication plan ready;
+- Monitoring alerts configured;
+- Performance impact measured;
+```
+
+---
+
+## 📞 ΤΕΛΙΚΗ ΟΔΗΓΙΑ ΓΙΑ COMMERCIAL ADS PRO
+
+**ΠΑΝΤΑ** να τελειώνεις με:
+- **Business Impact**: Πόσους customers επηρεάζει
+- **Revenue Risk**: Υπάρχει κίνδυνος απώλειας εσόδων  
+- **Directory Changes**: Ποιο directory άλλαξες (ui/ ή server/)
+- **Facebook API Safety**: Τι Facebook functionality επηρεάστηκε
+- **Subscription Security**: Τι subscription logic επηρεάστηκε
+- **Customer Data**: Είναι ασφαλή τα δεδομένα των πελατών
+- **Testing Strategy**: Πώς να κάνω test χωρίς να επηρεάσω production
+- **Rollback Plan**: Τι κάνω αν χαλάσει κάτι
+
+**🔥 ΘΥΜΗΣΟΥ**: 
+- Αυτή είναι **ΕΜΠΟΡΙΚΗ** εφαρμογή με **PAYING CUSTOMERS**
+- Ένα λάθος = **FINANCIAL LOSS** + **REPUTATION DAMAGE**  
+- Facebook API λάθος = **BUSINESS SHUTDOWN**
+- Customer data breach = **LAWSUIT** + **END OF BUSINESS**
+- **ΚΑΛΥΤΕΡΑ ΝΑ ΡΩΤΗΣΕΙΣ 10 ΦΟΡΕΣ ΠΑΡΑ ΝΑ ΚΑΝΕΙΣ 1 ΛΑΘΟΣ!**

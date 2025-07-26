@@ -1,0 +1,530 @@
+// Working Ads Pro Application με Function Buttons
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
+// Landing Page Component
+function LandingPage() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    console.log('Navigating to login...');
+    navigate('/login');
+  };
+
+  const handleTrial = () => {
+    console.log('Starting trial...');
+    navigate('/trial');
+  };
+
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      color: 'white',
+      fontFamily: 'system-ui, sans-serif',
+      padding: '2rem'
+    }}>
+      {/* Navigation Header */}
+      <nav style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: '4rem'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{
+            background: 'rgba(255,255,255,0.2)',
+            padding: '0.5rem',
+            borderRadius: '12px'
+          }}>
+            🚀
+          </div>
+          <div>
+            <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Ads Pro</h2>
+            <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.8 }}>Attribution Platform</p>
+          </div>
+        </div>
+        
+        <button
+          onClick={handleLogin}
+          style={{
+            padding: '0.75rem 1.5rem',
+            background: 'transparent',
+            border: '2px solid white',
+            borderRadius: '8px',
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: '1rem',
+            fontWeight: '500'
+          }}
+        >
+          Login
+        </button>
+      </nav>
+
+      {/* Hero Section */}
+      <div style={{
+        textAlign: 'center',
+        maxWidth: '800px',
+        margin: '0 auto',
+        paddingTop: '2rem'
+      }}>
+        <h1 style={{
+          fontSize: '4rem',
+          marginBottom: '1rem',
+          background: 'linear-gradient(45deg, #fff, #e0e7ff)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          fontWeight: 'bold'
+        }}>
+          Αυξήστε το ROAS σας κατά 40%
+        </h1>
+        
+        <p style={{
+          fontSize: '1.3rem',
+          marginBottom: '2rem',
+          opacity: 0.9,
+          lineHeight: '1.6'
+        }}>
+          Η μόνη attribution platform που χρειάζεστε για να optimizάρετε 
+          τα campaigns σας και να κλιμακώσετε το ad spend με confidence.
+        </p>
+
+        {/* CTA Buttons */}
+        <div style={{
+          display: 'flex',
+          gap: '1rem',
+          justifyContent: 'center',
+          marginBottom: '3rem',
+          flexWrap: 'wrap'
+        }}>
+          <button
+            onClick={handleTrial}
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1.1rem',
+              background: 'rgba(255,255,255,0.95)',
+              color: '#667eea',
+              border: 'none',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 25px rgba(0,0,0,0.15)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }}
+          >
+            🚀 Ξεκινήστε Free Trial
+          </button>
+          
+          <button
+            onClick={() => window.open('https://calendly.com/your-demo', '_blank')}
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1.1rem',
+              background: 'transparent',
+              color: 'white',
+              border: '2px solid white',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              fontWeight: 'bold'
+            }}
+          >
+            📅 Book Demo
+          </button>
+        </div>
+
+        {/* Stats */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+          gap: '2rem',
+          marginTop: '4rem'
+        }}>
+          {[
+            { value: '2M+', label: 'Campaigns Analyzed' },
+            { value: '€50M+', label: 'Ad Spend Optimized' },
+            { value: '94%', label: 'ROAS Improvement' },
+            { value: '500+', label: 'Happy Agencies' }
+          ].map((stat, index) => (
+            <div key={index} style={{
+              background: 'rgba(255,255,255,0.1)',
+              padding: '1.5rem',
+              borderRadius: '12px',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                {stat.value}
+              </div>
+              <div style={{ fontSize: '0.9rem', opacity: 0.8 }}>
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Login Page Component
+function LoginPage() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Login attempt:', { email, password });
+    
+    // Simple demo login
+    if (email && password) {
+      alert(`Welcome ${email}! Redirecting to dashboard...`);
+      navigate('/dashboard');
+    } else {
+      alert('Please enter email and password');
+    }
+  };
+
+  const demoUsers = [
+    { email: 'admin@adspro.com', role: 'Super Admin', color: '#f59e0b' },
+    { email: 'maria@agency.gr', role: 'Agency Admin', color: '#3b82f6' },
+    { email: 'dimitris@agency.gr', role: 'Moderator', color: '#8b5cf6' },
+    { email: 'client@startup.com', role: 'Client', color: '#10b981' }
+  ];
+
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '2rem',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      <div style={{
+        background: 'rgba(255,255,255,0.95)',
+        borderRadius: '20px',
+        padding: '3rem',
+        width: '100%',
+        maxWidth: '900px',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '3rem',
+        boxShadow: '0 25px 50px rgba(0,0,0,0.2)'
+      }}>
+        {/* Login Form */}
+        <div>
+          <button
+            onClick={() => navigate('/')}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#667eea',
+              cursor: 'pointer',
+              marginBottom: '2rem',
+              fontSize: '0.9rem'
+            }}
+          >
+            ← Back to Home
+          </button>
+          
+          <h2 style={{ color: '#333', marginBottom: '1rem', fontSize: '2rem' }}>
+            Welcome Back! 👋
+          </h2>
+          <p style={{ color: '#666', marginBottom: '2rem' }}>
+            Sign in to your Ads Pro account
+          </p>
+
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <input
+              type="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{
+                padding: '1rem',
+                border: '2px solid #e5e7eb',
+                borderRadius: '8px',
+                fontSize: '1rem'
+              }}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{
+                padding: '1rem',
+                border: '2px solid #e5e7eb',
+                borderRadius: '8px',
+                fontSize: '1rem'
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                padding: '1rem',
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                cursor: 'pointer'
+              }}
+            >
+              Sign In
+            </button>
+          </form>
+        </div>
+
+        {/* Demo Users */}
+        <div>
+          <h3 style={{ color: '#333', marginBottom: '1rem' }}>Demo Users</h3>
+          <p style={{ color: '#666', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
+            Click any user for quick login
+          </p>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {demoUsers.map((user, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setEmail(user.email);
+                  setPassword('demo123');
+                }}
+                style={{
+                  padding: '1rem',
+                  background: '#f9fafb',
+                  border: `2px solid ${user.color}20`,
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  transition: 'all 0.2s'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = `${user.color}10`;
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = '#f9fafb';
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <div style={{ fontWeight: 'bold', color: '#333' }}>{user.email}</div>
+                    <div style={{ fontSize: '0.8rem', color: '#666' }}>{user.role}</div>
+                  </div>
+                  <div style={{
+                    width: '12px',
+                    height: '12px',
+                    borderRadius: '50%',
+                    background: user.color
+                  }}></div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Trial Page Component
+function TrialPage() {
+  const navigate = useNavigate();
+
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      color: 'white',
+      fontFamily: 'system-ui, sans-serif',
+      padding: '2rem'
+    }}>
+      <button
+        onClick={() => navigate('/')}
+        style={{
+          background: 'rgba(255,255,255,0.2)',
+          border: '1px solid white',
+          color: 'white',
+          padding: '0.5rem 1rem',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          marginBottom: '2rem'
+        }}
+      >
+        ← Back to Home
+      </button>
+      
+      <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+        <h1 style={{ fontSize: '3rem', marginBottom: '2rem' }}>🚀 Start Your Free Trial</h1>
+        <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+          14-day free trial • No credit card required • Cancel anytime
+        </p>
+        
+        <div style={{
+          background: 'rgba(255,255,255,0.1)',
+          padding: '2rem',
+          borderRadius: '12px',
+          marginBottom: '2rem'
+        }}>
+          <h3>What's included:</h3>
+          <ul style={{ textAlign: 'left', lineHeight: '2' }}>
+            <li>✅ Unlimited campaigns</li>
+            <li>✅ AI-powered attribution</li>
+            <li>✅ Real-time analytics</li>
+            <li>✅ Multi-platform integration</li>
+            <li>✅ Priority support</li>
+          </ul>
+        </div>
+
+        <button
+          onClick={() => navigate('/login')}
+          style={{
+            padding: '1rem 2rem',
+            background: 'white',
+            color: '#667eea',
+            border: 'none',
+            borderRadius: '8px',
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            cursor: 'pointer'
+          }}
+        >
+          Get Started Now
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// Dashboard Page Component  
+function DashboardPage() {
+  const navigate = useNavigate();
+
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: '#f8fafc',
+      fontFamily: 'system-ui, sans-serif',
+      padding: '2rem'
+    }}>
+      <div style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        color: 'white',
+        padding: '1rem 2rem',
+        borderRadius: '12px',
+        marginBottom: '2rem',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <h1>🎯 Ads Pro Dashboard</h1>
+        <button
+          onClick={() => navigate('/')}
+          style={{
+            background: 'rgba(255,255,255,0.2)',
+            border: '1px solid white',
+            color: 'white',
+            padding: '0.5rem 1rem',
+            borderRadius: '8px',
+            cursor: 'pointer'
+          }}
+        >
+          Logout
+        </button>
+      </div>
+      
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '2rem'
+      }}>
+        {[
+          { title: 'Total Revenue', value: '€124,569', change: '+12.5%' },
+          { title: 'ROAS', value: '4.2x', change: '+8.3%' },
+          { title: 'Campaigns', value: '23', change: '+2' },
+          { title: 'Conversions', value: '1,234', change: '+15.2%' }
+        ].map((metric, index) => (
+          <div key={index} style={{
+            background: 'white',
+            padding: '1.5rem',
+            borderRadius: '12px',
+            boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+          }}>
+            <h3 style={{ color: '#666', fontSize: '0.9rem', margin: 0 }}>{metric.title}</h3>
+            <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#333', margin: '0.5rem 0' }}>
+              {metric.value}
+            </div>
+            <div style={{ color: '#10b981', fontSize: '0.9rem' }}>{metric.change}</div>
+          </div>
+        ))}
+      </div>
+      
+      <div style={{
+        background: 'white',
+        padding: '2rem',
+        borderRadius: '12px',
+        marginTop: '2rem',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+      }}>
+        <h2 style={{ color: '#333', marginBottom: '1rem' }}>🎉 Welcome to Ads Pro!</h2>
+        <p style={{ color: '#666' }}>
+          Your attribution platform is ready. Start connecting your ad accounts to get insights.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// Main App Component
+function WorkingApp() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/trial" element={<TrialPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="*" element={
+          <div style={{
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontFamily: 'system-ui, sans-serif'
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <h1>404 - Page Not Found</h1>
+              <button
+                onClick={() => window.location.href = '/'}
+                style={{
+                  padding: '1rem 2rem',
+                  background: '#667eea',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  cursor: 'pointer'
+                }}
+              >
+                Go Home
+              </button>
+            </div>
+          </div>
+        } />
+      </Routes>
+    </Router>
+  );
+}
+
+export default WorkingApp;

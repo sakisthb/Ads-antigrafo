@@ -1,0 +1,101 @@
+# Page snapshot
+
+```yaml
+- region "Notifications alt+T"
+- navigation:
+  - heading "Ads Pro" [level=1]
+  - paragraph: Platforms Analysis
+  - button "Dashboard"
+  - button "Campaigns"
+  - button "Analytics"
+  - button "Funnel Analysis"
+  - textbox "Αναζήτηση..."
+  - button
+  - button "Toggle theme"
+  - button "Αποσύνδεση"
+  - button "U"
+- text: Menu
+- list:
+  - listitem:
+    - link "Dashboard":
+      - /url: /
+  - listitem:
+    - link "Campaigns":
+      - /url: /campaigns
+  - listitem:
+    - link "Analytics":
+      - /url: /analytics
+  - listitem:
+    - link "Campaign Analysis":
+      - /url: /campaign-analysis
+  - listitem:
+    - link "Real-Time":
+      - /url: /realtime
+  - listitem:
+    - link "Funnel Analysis":
+      - /url: /funnel-analysis
+  - listitem:
+    - link "Analytics Studio":
+      - /url: /analytics-studio
+- text: Quick Actions
+- list:
+  - listitem:
+    - button "Refresh"
+    - button
+  - listitem:
+    - button "Export"
+- list:
+  - listitem:
+    - link "Settings":
+      - /url: /settings
+- main:
+  - main:
+    - text: Dashboard Ζωντανά Στατιστικά
+    - heading "Dashboard" [level=1]
+    - paragraph: Platform Analysis Overview
+    - button "Δείτε Καμπάνιες"
+    - button "Analytics"
+    - text: 12.5%
+    - paragraph: Συνολικό Κόστος
+    - paragraph: €12,450
+    - text: 8.2%
+    - paragraph: Επισκέψεις
+    - paragraph: 45.2K
+    - text: 2.1%
+    - paragraph: CTR
+    - paragraph: 3.24%
+    - text: 15.7%
+    - paragraph: Impressions
+    - paragraph: 1.2M
+    - heading "Απόδοση ανά Πλατφόρμα" [level=3]
+    - paragraph: Κατανομή του budget και της απόδοσης
+    - text: Facebook 45% Instagram 30% Google Ads 15% TikTok 10%
+    - heading "Πρόσφατη Δραστηριότητα" [level=3]
+    - paragraph: Τελευταίες ενέργειες και αλλαγές
+    - paragraph: Νέα καμπάνια δημιουργήθηκε
+    - paragraph: 2 ώρες πριν
+    - paragraph: Ενημέρωση budget
+    - paragraph: 4 ώρες πριν
+    - paragraph: Νέο ad set προστέθηκε
+    - paragraph: 6 ώρες πριν
+    - paragraph: Αλλαγή targeting
+    - paragraph: 1 ημέρα πριν
+    - heading "Γρήγορες Ενέργειες" [level=3]
+    - paragraph: Δημιουργήστε νέες καμπάνιες και δείτε αναφορές
+    - button "Νέα Καμπάνια Δημιουργήστε μια νέα καμπάνια":
+      - heading "Νέα Καμπάνια" [level=4]
+      - paragraph: Δημιουργήστε μια νέα καμπάνια
+    - button "Analytics Δείτε λεπτομερείς αναλύσεις":
+      - heading "Analytics" [level=4]
+      - paragraph: Δείτε λεπτομερείς αναλύσεις
+    - button "Funnel Analysis Αναλύστε το customer journey":
+      - heading "Funnel Analysis" [level=4]
+      - paragraph: Αναλύστε το customer journey
+- button "Βοήθεια & Υποστήριξη"
+- heading "Performance Monitor" [level=3]
+- button "Pause"
+- button "Clear"
+- text: "Renders: 1 Avg: 2.0ms Performance Score 100%"
+- progressbar
+- text: "Last render: 12:47:23 PM"
+```

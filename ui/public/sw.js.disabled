@@ -1,0 +1,427 @@
+// Service Worker for Ads Pro PWA
+// Provides offline functionality and caching strategies
+
+const CACHE_NAME = 'adspro-v1.0.0';
+const STATIC_CACHE = 'adspro-static-v1.0.0';
+const DYNAMIC_CACHE = 'adspro-dynamic-v1.0.0';
+const API_CACHE = 'adspro-api-v1.0.0';
+
+// Files to cache immediately (static assets)
+const STATIC_ASSETS = [
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/favicon.ico',
+  '/favicon-96x96.png',
+  '/apple-touch-icon.png',
+  '/web-app-manifest-192x192.png',
+  '/web-app-manifest-512x512.png',
+  // Add other critical static assets
+];
+
+// API endpoints to cache with different strategies
+const API_CACHE_PATTERNS = [
+  /\/api\/dashboard/,
+  /\/api\/campaigns/,
+  /\/api\/analytics/,
+  /\/api\/user\/profile/,
+];
+
+// Cache strategies
+const CACHE_STRATEGIES = {
+  CACHE_FIRST: 'cache-first',
+  NETWORK_FIRST: 'network-first',
+  STALE_WHILE_REVALIDATE: 'stale-while-revalidate',
+  NETWORK_ONLY: 'network-only',
+  CACHE_ONLY: 'cache-only'
+};
+
+// Install event - cache static assets
+self.addEventListener('install', event => {
+  console.log('[SW] Installing service worker...');
+  
+  event.waitUntil(
+    caches.open(STATIC_CACHE)
+      .then(cache => {
+        console.log('[SW] Caching static assets');
+        return cache.addAll(STATIC_ASSETS);
+      })
+      .then(() => {
+        console.log('[SW] Static assets cached');
+        return self.skipWaiting();
+      })
+      .catch(error => {
+        console.error('[SW] Failed to cache static assets:', error);
+      })
+  );
+});
+
+// Activate event - clean up old caches
+self.addEventListener('activate', event => {
+  console.log('[SW] Activating service worker...');
+  
+  event.waitUntil(
+    caches.keys()
+      .then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cacheName => {
+            if (cacheName !== STATIC_CACHE && 
+                cacheName !== DYNAMIC_CACHE && 
+                cacheName !== API_CACHE) {
+              console.log('[SW] Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(() => {
+        console.log('[SW] Service worker activated');
+        return self.clients.claim();
+      })
+  );
+});
+
+// Fetch event - handle requests with different strategies
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  const url = new URL(request.url);
+  
+  // Skip non-GET requests and chrome-extension requests
+  if (request.method !== 'GET' || url.protocol === 'chrome-extension:') {
+    return;
+  }
+  
+  // Handle different types of requests
+  if (isStaticAsset(request)) {
+    event.respondWith(handleStaticAsset(request));
+  } else if (isAPIRequest(request)) {
+    event.respondWith(handleAPIRequest(request));
+  } else if (isNavigationRequest(request)) {
+    event.respondWith(handleNavigationRequest(request));
+  } else {
+    event.respondWith(handleDynamicRequest(request));
+  }
+});
+
+// Check if request is for static asset
+function isStaticAsset(request) {
+  const url = new URL(request.url);
+  return url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/);
+}
+
+// Check if request is for API
+function isAPIRequest(request) {
+  const url = new URL(request.url);
+  return url.pathname.startsWith('/api/') || 
+         API_CACHE_PATTERNS.some(pattern => pattern.test(url.pathname));
+}
+
+// Check if request is navigation request
+function isNavigationRequest(request) {
+  return request.mode === 'navigate';
+}
+
+// Handle static assets with cache-first strategy
+async function handleStaticAsset(request) {
+  try {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    const networkResponse = await fetch(request);
+    
+    if (networkResponse.ok) {
+      const cache = await caches.open(STATIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    
+    return networkResponse;
+  } catch (error) {
+    console.error('[SW] Static asset fetch failed:', error);
+    
+    // Return cached version if available
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    throw error;
+  }
+}
+
+// Handle API requests with network-first strategy
+async function handleAPIRequest(request) {
+  try {
+    const networkResponse = await fetch(request);
+    
+    if (networkResponse.ok) {
+      // Cache successful API responses
+      const cache = await caches.open(API_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    
+    return networkResponse;
+  } catch (error) {
+    console.log('[SW] Network failed for API request, trying cache:', request.url);
+    
+    // Try to return cached version
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      // Add offline indicator to response headers
+      const offlineResponse = cachedResponse.clone();
+      offlineResponse.headers.set('X-Served-By', 'sw-cache');
+      return offlineResponse;
+    }
+    
+    // Return offline page or error response for API
+    return new Response(
+      JSON.stringify({
+        error: 'Offline',
+        message: 'This data is not available offline'
+      }),
+      {
+        status: 503,
+        statusText: 'Service Unavailable',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Served-By': 'sw-offline'
+        }
+      }
+    );
+  }
+}
+
+// Handle navigation requests
+async function handleNavigationRequest(request) {
+  try {
+    const networkResponse = await fetch(request);
+    
+    if (networkResponse.ok) {
+      // Cache the page
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    
+    return networkResponse;
+  } catch (error) {
+    console.log('[SW] Network failed for navigation, serving offline page');
+    
+    // Try to return cached version
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    // Return the main app (SPA fallback)
+    const appShell = await caches.match('/');
+    if (appShell) {
+      return appShell;
+    }
+    
+    // Last resort: create offline page
+    return new Response(
+      createOfflinePage(),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'text/html' }
+      }
+    );
+  }
+}
+
+// Handle other dynamic requests
+async function handleDynamicRequest(request) {
+  try {
+    const networkResponse = await fetch(request);
+    
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    
+    return networkResponse;
+  } catch (error) {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    throw error;
+  }
+}
+
+// Create offline page HTML
+function createOfflinePage() {
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Ads Pro - Offline</title>
+      <style>
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+        }
+        .container {
+          text-align: center;
+          padding: 2rem;
+          max-width: 500px;
+        }
+        .icon {
+          font-size: 4rem;
+          margin-bottom: 1rem;
+        }
+        .title {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+        .message {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 2rem;
+          opacity: 0.9;
+        }
+        .button {
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          color: white;
+          padding: 0.75rem 2rem;
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-block;
+        }
+        .button:hover {
+          background: rgba(255, 255, 255, 0.3);
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="icon">📱</div>
+        <div class="title">You're Offline</div>
+        <div class="message">
+          Don't worry! Ads Pro works offline too. You can still view your cached data and when you're back online, everything will sync automatically.
+        </div>
+        <button class="button" onclick="window.location.reload()">
+          Try Again
+        </button>
+      </div>
+    </body>
+    </html>
+  `;
+}
+
+// Background sync for when connection is restored
+self.addEventListener('sync', event => {
+  console.log('[SW] Background sync triggered:', event.tag);
+  
+  if (event.tag === 'background-sync') {
+    event.waitUntil(doBackgroundSync());
+  }
+});
+
+// Perform background sync
+async function doBackgroundSync() {
+  try {
+    // Notify clients that sync is happening
+    const clients = await self.clients.matchAll();
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'SYNC_START'
+      });
+    });
+    
+    // Perform sync operations here
+    console.log('[SW] Background sync completed');
+    
+    // Notify clients that sync is complete
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'SYNC_COMPLETE'
+      });
+    });
+  } catch (error) {
+    console.error('[SW] Background sync failed:', error);
+  }
+}
+
+// Handle push notifications
+self.addEventListener('push', event => {
+  console.log('[SW] Push notification received');
+  
+  const options = {
+    body: 'Your campaigns have been updated',
+    icon: '/web-app-manifest-192x192.png',
+    badge: '/favicon-96x96.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: '1'
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: 'View Dashboard',
+        icon: '/favicon-96x96.png'
+      },
+      {
+        action: 'close',
+        title: 'Close',
+        icon: '/favicon-96x96.png'
+      }
+    ]
+  };
+  
+  if (event.data) {
+    const data = event.data.json();
+    options.body = data.body || options.body;
+    options.data = { ...options.data, ...data };
+  }
+  
+  event.waitUntil(
+    self.registration.showNotification('Ads Pro', options)
+  );
+});
+
+// Handle notification clicks
+self.addEventListener('notificationclick', event => {
+  console.log('[SW] Notification clicked:', event.action);
+  
+  event.notification.close();
+  
+  if (event.action === 'explore') {
+    event.waitUntil(
+      clients.openWindow('/')
+    );
+  }
+});
+
+// Message handling from main thread
+self.addEventListener('message', event => {
+  console.log('[SW] Message received:', event.data);
+  
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+  
+  if (event.data && event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: CACHE_NAME });
+  }
+});
+
+console.log('[SW] Service worker loaded');

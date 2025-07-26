@@ -1,0 +1,173 @@
+# Page snapshot
+
+```yaml
+- region "Notifications alt+T"
+- navigation:
+  - heading "Ads Pro" [level=1]
+  - paragraph: Platforms Analysis
+  - button "Dashboard"
+  - button "Campaigns"
+  - button "Analytics"
+  - button "Funnel Analysis"
+  - textbox "Αναζήτηση..."
+  - button
+  - button "Toggle theme"
+  - button "Αποσύνδεση"
+  - button "U"
+- text: Menu
+- list:
+  - listitem:
+    - link "Dashboard":
+      - /url: /
+  - listitem:
+    - link "Campaigns":
+      - /url: /campaigns
+  - listitem:
+    - link "Analytics":
+      - /url: /analytics
+  - listitem:
+    - link "Campaign Analysis":
+      - /url: /campaign-analysis
+  - listitem:
+    - link "Real-Time":
+      - /url: /realtime
+  - listitem:
+    - link "Funnel Analysis":
+      - /url: /funnel-analysis
+  - listitem:
+    - link "Analytics Studio":
+      - /url: /analytics-studio
+- text: Quick Actions
+- list:
+  - listitem:
+    - button "Refresh"
+    - button
+  - listitem:
+    - button "Export"
+- list:
+  - listitem:
+    - link "Settings":
+      - /url: /settings
+- main:
+  - main:
+    - navigation:
+      - link "Dashboard":
+        - /url: /
+      - text: Analytics
+    - text: Analytics
+    - heading "Analytics" [level=1]
+    - paragraph: Αναλυτικά στατιστικά και αναφορές για τις καμπάνιες σας
+    - combobox: analytics.timeRange30d
+    - button "Filters"
+    - button "Εξαγωγή"
+    - text: 8.2%
+    - paragraph: Impressions
+    - paragraph: 93,000
+    - text: 3.24%
+    - paragraph: Clicks
+    - paragraph: 2,630
+    - text: 15.7%
+    - paragraph: Conversions
+    - paragraph: "152"
+    - text: 12.5%
+    - paragraph: Revenue
+    - paragraph: €15,200
+    - tablist:
+      - tab "Sales KPIs" [selected]
+      - tab "Funnel Analysis"
+      - tab "Advanced"
+    - tabpanel "Sales KPIs":
+      - heading "Έσοδα (Line Chart)" [level=3]
+      - paragraph: Έσοδα ανά μήνα
+      - application:
+        - list:
+          - listitem:
+            - img "Έσοδα legend icon"
+            - text: Έσοδα
+        - application: Jan Feb Mar Apr Jun 0 9000 18000
+      - heading "Αριθμός Πωλήσεων (Bar Chart)" [level=3]
+      - paragraph: Αριθμός πωλήσεων ανά μήνα
+      - application:
+        - list:
+          - listitem:
+            - img "Πωλήσεις legend icon"
+            - text: Πωλήσεις
+        - application: Feb Apr Jun 0 90 180
+      - heading "Ποσοστό Μετατροπής (Line Chart)" [level=3]
+      - paragraph: Conversion Rate ανά μήνα
+      - application:
+        - list:
+          - listitem:
+            - img "Μετατροπή % legend icon"
+            - text: Μετατροπή %
+        - application: Jan Feb Mar Apr Jun 0 4 8
+      - heading "Κόστος ανά Πώληση (CPA)" [level=3]
+      - paragraph: Κόστος ανά πώληση
+      - application:
+        - list:
+          - listitem:
+            - img "CPA legend icon"
+            - text: CPA
+        - application: Feb Apr Jun 0 6 12
+      - heading "Απόδοση Διαφημιστικής Δαπάνης (ROAS)" [level=3]
+      - paragraph: Return on Ad Spend
+      - application:
+        - list:
+          - listitem:
+            - img "ROAS legend icon"
+            - text: ROAS
+        - application: Feb Apr Jun 0 1.6 3.2
+      - heading "Μέση Τιμή Παραγγελίας (AOV)" [level=3]
+      - paragraph: Average Order Value
+      - application:
+        - list:
+          - listitem:
+            - img "AOV legend icon"
+            - text: AOV
+        - application: Jan Feb Mar Apr Jun 0 60 120
+      - heading "ROAS" [level=3]
+      - text: 3.20x
+      - paragraph: +-8.6% from target
+      - heading "Revenue" [level=3]
+      - text: $15,200
+      - paragraph: +22.1% from last period
+      - heading "Conversion Rate" [level=3]
+      - text: 5.78%
+      - paragraph: +80.6% from target
+      - heading "CPA" [level=3]
+      - text: $23.95
+      - paragraph: "-4.2% from target"
+      - heading "AOV" [level=3]
+      - text: $100.00
+      - paragraph: +33.3% from target
+      - heading "CAC" [level=3]
+      - text: $23.95
+      - paragraph: "--19.7% from target"
+      - heading "Lead to Sale" [level=3]
+      - text: 68.5%
+      - paragraph: +24.5% from target
+      - heading "Churn Rate" [level=3]
+      - text: 12.3%
+      - paragraph: "-18.0% from target"
+      - heading "Lead to Sale Conversion" [level=3]
+      - paragraph: Lead conversion rate breakdown
+      - application:
+        - application: Leads 56% Sales 44%
+      - heading "Customer Retention" [level=3]
+      - paragraph: Customer churn vs retention
+      - application:
+        - application: Active 90% Churned 10%
+      - heading "Performance Summary" [level=3]
+      - paragraph: Key insights and recommendations
+      - heading "Top Performers" [level=4]
+      - text: ROAS 3.20x Revenue Growth +22.1% Lead to Sale Rate 68.5%
+      - heading "Areas for Improvement" [level=4]
+      - text: Churn Rate 12.3% CPA $23.95 Conversion Rate 5.78%
+- button "Βοήθεια & Υποστήριξη"
+- heading "Performance Monitor" [level=3]
+- button "Pause"
+- button "Clear"
+- text: "Renders: 1 Avg: 1.4ms Performance Score 100%"
+- progressbar
+- text: "Last render: 12:46:14 PM"
+```

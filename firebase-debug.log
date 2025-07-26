@@ -1,0 +1,376 @@
+[debug] [2025-07-25T17:56:07.993Z] ----------------------------------------------------------------------
+[debug] [2025-07-25T17:56:07.995Z] Command:       /usr/local/bin/node /Users/airathanasios/Claude-Cursor-ai/node_modules/firebase-tools/lib/bin/firebase.js emulators:start --only auth --project demo-project --export-on-exit=./data/firebase-emulator --import=./data/firebase-emulator
+[debug] [2025-07-25T17:56:07.995Z] CLI Version:   13.35.1
+[debug] [2025-07-25T17:56:07.995Z] Platform:      darwin
+[debug] [2025-07-25T17:56:07.995Z] Node Version:  v22.16.0
+[debug] [2025-07-25T17:56:07.995Z] Time:          Fri Jul 25 2025 20:56:07 GMT+0300 (Eastern European Summer Time)
+[debug] [2025-07-25T17:56:07.995Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-25T17:56:08.088Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] Failed to authenticate, have you run firebase login?
+[warn] ⚠  emulators: You are not currently authenticated so some features may not work correctly. Please run firebase login to authenticate the CLI. 
+[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
+[info] i  emulators: Detected demo project ID "demo-project", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail. {"metadata":{"emulator":{"name":"hub"},"message":"Detected demo project ID \"demo-project\", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail."}}
+[debug] [2025-07-25T17:56:08.241Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-25T17:56:08.241Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-25T17:56:08.241Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":5504},{"address":"::1","family":"IPv6","port":5504}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":5503}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] ⚠  emulators: It seems that you are running multiple instances of the emulator suite for project demo-project. This may result in unexpected behavior. 
+[debug] [2025-07-25T17:56:08.243Z] [hub] writing locator at /var/folders/_4/vvbns5ds6g7_bg68fl0dzxmm0000gn/T/hub-demo-project.json
+[info] i  auth: Importing config from /Users/airathanasios/Claude-Cursor-ai/data/firebase-emulator/auth_export/config.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing config from /Users/airathanasios/Claude-Cursor-ai/data/firebase-emulator/auth_export/config.json"}}
+[info] i  auth: Importing accounts from /Users/airathanasios/Claude-Cursor-ai/data/firebase-emulator/auth_export/accounts.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing accounts from /Users/airathanasios/Claude-Cursor-ai/data/firebase-emulator/auth_export/accounts.json"}}
+[debug] [2025-07-25T17:56:11.001Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:5504/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI        │
+├────────────────┼────────────────┼────────────────────────────┤
+│ Authentication │ 127.0.0.1:5503 │ http://127.0.0.1:5504/auth │
+└────────────────┴────────────────┴────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-07-26T09:50:26.593Z] ----------------------------------------------------------------------
+[debug] [2025-07-26T09:50:26.596Z] Command:       /usr/local/bin/node /Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/firebase-tools/lib/bin/firebase.js emulators:start --only auth --project demo-project --export-on-exit=./data/firebase-emulator --import=./data/firebase-emulator
+[debug] [2025-07-26T09:50:26.596Z] CLI Version:   13.35.1
+[debug] [2025-07-26T09:50:26.597Z] Platform:      darwin
+[debug] [2025-07-26T09:50:26.597Z] Node Version:  v22.16.0
+[debug] [2025-07-26T09:50:26.597Z] Time:          Sat Jul 26 2025 12:50:26 GMT+0300 (Eastern European Summer Time)
+[debug] [2025-07-26T09:50:26.597Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-26T09:50:27.006Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] Failed to authenticate, have you run firebase login?
+[warn] ⚠  emulators: You are not currently authenticated so some features may not work correctly. Please run firebase login to authenticate the CLI. 
+[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
+[info] i  emulators: Detected demo project ID "demo-project", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail. {"metadata":{"emulator":{"name":"hub"},"message":"Detected demo project ID \"demo-project\", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail."}}
+[debug] [2025-07-26T09:50:27.474Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-26T09:50:27.474Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-26T09:50:27.475Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":5504},{"address":"::1","family":"IPv6","port":5504}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":5503}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] ⚠  emulators: It seems that you are running multiple instances of the emulator suite for project demo-project. This may result in unexpected behavior. 
+[debug] [2025-07-26T09:50:27.484Z] [hub] writing locator at /var/folders/_4/vvbns5ds6g7_bg68fl0dzxmm0000gn/T/hub-demo-project.json
+[info] i  auth: Importing config from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/config.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing config from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/config.json"}}
+[info] i  auth: Importing accounts from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/accounts.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing accounts from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/accounts.json"}}
+[debug] [2025-07-26T09:50:35.904Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:5504/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI        │
+├────────────────┼────────────────┼────────────────────────────┤
+│ Authentication │ 127.0.0.1:5503 │ http://127.0.0.1:5504/auth │
+└────────────────┴────────────────┴────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-07-26T10:48:22.102Z] Received signal SIGHUP 1
+[info]  
+[info] i  emulators: Received SIGHUP for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGHUP signal again to stop right now. 
+[info] i  Automatically exporting data using --export-on-exit "./data/firebase-emulator" please wait for the export to finish... 
+[debug] [2025-07-26T10:48:22.369Z] >>> [apiv2][query] GET http://127.0.0.1:4400/ [none]
+[debug] [2025-07-26T10:48:22.436Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.438Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.440Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.440Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.440Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.440Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.441Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.442Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.442Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.442Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.443Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.443Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.443Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.443Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.444Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.444Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.444Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.480Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.480Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T10:48:22.481Z] Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:971:11)
+    at Socket._write (node:net:983:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Writable.write (node:internal/streams/writable:510:10)
+    at Console.log (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston@3.17.0/node_modules/winston/lib/winston/transports/console.js:87:23)
+    at Console._write (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/winston-transport@4.9.0/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/.pnpm/readable-stream@3.6.2/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-26T12:39:05.286Z] ----------------------------------------------------------------------
+[debug] [2025-07-26T12:39:05.288Z] Command:       /usr/local/bin/node /Users/airathanasios/Claude-Cursor-ai αντίγραφο/node_modules/firebase-tools/lib/bin/firebase.js emulators:start --only auth --project demo-project --export-on-exit=./data/firebase-emulator --import=./data/firebase-emulator
+[debug] [2025-07-26T12:39:05.289Z] CLI Version:   13.35.1
+[debug] [2025-07-26T12:39:05.289Z] Platform:      darwin
+[debug] [2025-07-26T12:39:05.289Z] Node Version:  v22.16.0
+[debug] [2025-07-26T12:39:05.289Z] Time:          Sat Jul 26 2025 15:39:05 GMT+0300 (Eastern European Summer Time)
+[debug] [2025-07-26T12:39:05.289Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-26T12:39:05.434Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] Failed to authenticate, have you run firebase login?
+[warn] ⚠  emulators: You are not currently authenticated so some features may not work correctly. Please run firebase login to authenticate the CLI. 
+[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
+[info] i  emulators: Detected demo project ID "demo-project", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail. {"metadata":{"emulator":{"name":"hub"},"message":"Detected demo project ID \"demo-project\", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail."}}
+[debug] [2025-07-26T12:39:06.143Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-26T12:39:06.143Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-26T12:39:06.143Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":5504},{"address":"::1","family":"IPv6","port":5504}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":5503}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-07-26T12:39:06.146Z] [hub] writing locator at /var/folders/_4/vvbns5ds6g7_bg68fl0dzxmm0000gn/T/hub-demo-project.json
+[info] i  auth: Importing config from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/config.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing config from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/config.json"}}
+[info] i  auth: Importing accounts from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/accounts.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing accounts from /Users/airathanasios/Claude-Cursor-ai αντίγραφο/data/firebase-emulator/auth_export/accounts.json"}}
+[debug] [2025-07-26T12:39:11.271Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:5504/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI        │
+├────────────────┼────────────────┼────────────────────────────┤
+│ Authentication │ 127.0.0.1:5503 │ http://127.0.0.1:5504/auth │
+└────────────────┴────────────────┴────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

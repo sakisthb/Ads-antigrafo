@@ -1,0 +1,197 @@
+================================================================================
+                            VOLO CHAT BACKUP INFORMATION
+================================================================================
+
+📅 Ημερομηνία Backup: 11 Ιουλίου 2025, 14:14:15 EEST
+📦 Αρχείο Backup: volo-chat-backup-20250711-141415.tar.gz
+📏 Μέγεθος: 912KB (932,709 bytes)
+🔧 Έκδοση Project: 0.3.0
+📋 Τύπος: Commercial SaaS Platform - Meta Ads Analytics
+
+================================================================================
+                            ΠΕΡΙΕΧΟΜΕΝΑ BACKUP
+================================================================================
+
+✅ ΠΛΗΡΕΣ PROJECT STRUCTURE:
+├── ui/                    # React Frontend (Vite + TypeScript)
+├── server/               # Hono API Backend (Node.js)
+├── database-server/      # Embedded PostgreSQL Server
+├── scripts/              # Development & Deployment Scripts
+├── docs/                 # Documentation
+├── public/               # Static assets
+└── src/                  # Additional source files
+
+✅ CONFIGURATION FILES:
+├── package.json          # Root workspace configuration
+├── pnpm-workspace.yaml   # pnpm workspace setup
+├── pnpm-lock.yaml        # Dependency lock file
+├── firebase.json         # Firebase configuration
+├── .gitignore           # Git ignore rules
+├── .cursorrules         # Cursor IDE rules
+└── LICENSE              # Project license
+
+✅ DOCUMENTATION:
+├── README.md                    # Main project documentation
+├── PROJECT_MANIFEST.txt         # Project specifications
+├── META_ADS_API_SETUP.md       # Facebook API setup guide
+├── FACEBOOK_SAFETY_GUIDE.md    # Facebook API safety guidelines
+├── VOLO_CHAT_TECHNICAL_ANALYSIS.txt  # Complete technical analysis
+└── docs/                       # Additional documentation
+
+✅ EXCLUDED FROM BACKUP (for security & size):
+├── node_modules/         # Dependencies (can be reinstalled)
+├── .git/                 # Git repository (version control)
+├── data/                 # Local development data
+├── dist/                 # Build outputs
+├── build/                # Build artifacts
+├── .env                  # Environment variables (sensitive)
+└── *.log                 # Log files
+
+================================================================================
+                            TECH STACK BACKED UP
+================================================================================
+
+FRONTEND (ui/):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ React 19.1.0 + TypeScript 5.8.3
+✅ Vite 6.3.5 build configuration
+✅ Tailwind CSS 4.1.7 + ShadCN/UI
+✅ Recharts 3.0.2 (data visualization)
+✅ Framer Motion 12.23.0 (animations)
+✅ i18next 25.3.0 (internationalization)
+✅ React Router DOM 7.6.0 (routing)
+✅ All UI components και pages
+
+BACKEND (server/):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Hono 4.0.5 API framework
+✅ Drizzle ORM 0.30.1 (database)
+✅ Firebase Admin SDK 12.0.0 (auth)
+✅ PostgreSQL schema definitions
+✅ API routes και middleware
+✅ Cloudflare Workers configuration
+
+DATABASE (database-server/):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Embedded PostgreSQL server
+✅ Database configuration
+✅ Schema migrations
+
+DEVELOPMENT TOOLS (scripts/):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Smart development server (run-dev.js)
+✅ Port management utilities
+✅ Database connectivity testing
+✅ Deployment scripts
+✅ Backup utilities
+
+================================================================================
+                            KEY FEATURES BACKED UP
+================================================================================
+
+✅ COMPLETE APPLICATION ARCHITECTURE:
+- Monorepo structure με pnpm workspaces
+- Full-stack React + Node.js application
+- TypeScript configuration για type safety
+- Modern build tools και development workflow
+
+✅ ADVANCED ANALYTICS COMPONENTS:
+- Performance dashboards με Recharts
+- Funnel analysis (TOFU, MOFU, BOFU)
+- AI-powered insights και recommendations
+- Real-time data visualization
+
+✅ SECURITY & AUTHENTICATION:
+- Firebase Authentication integration
+- JWT token management
+- Rate limiting για Facebook API
+- Multi-tenant architecture
+
+✅ META ADS API INTEGRATION:
+- Secure backend proxy για Facebook Graph API
+- Comprehensive error handling
+- Token management και refresh
+- Campaign data processing
+
+✅ USER INTERFACE:
+- Modern UI με ShadCN/UI components
+- Responsive design για όλες τις συσκευές
+- Dark/Light mode support
+- Internationalization (Greek/English)
+
+✅ DEVELOPMENT WORKFLOW:
+- Smart port management
+- Concurrent service orchestration
+- Environment detection
+- Error handling & recovery
+
+================================================================================
+                            RESTORATION INSTRUCTIONS
+================================================================================
+
+ΓΙΑ ΝΑ ΕΠΑΝΑΦΕΡΕΤΕ ΤΟ BACKUP:
+
+1. ΕΞΑΓΩΓΗ ΤΟΥ BACKUP:
+   tar -xzf volo-chat-backup-20250711-141415.tar.gz
+
+2. ΕΓΚΑΤΑΣΤΑΣΗ DEPENDENCIES:
+   pnpm install
+
+3. ΕΓΚΑΤΑΣΤΑΣΗ UI DEPENDENCIES:
+   cd ui && pnpm install
+
+4. ΕΓΚΑΤΑΣΤΑΣΗ SERVER DEPENDENCIES:
+   cd server && pnpm install
+
+5. ΕΓΚΑΤΑΣΤΑΣΗ DATABASE SERVER DEPENDENCIES:
+   cd database-server && pnpm install
+
+6. ΡΥΘΜΙΣΗ ENVIRONMENT VARIABLES:
+   - Δημιουργήστε .env files ανάλογα με τις ανάγκες
+   - Ρυθμίστε Firebase configuration
+   - Ρυθμίστε database connection strings
+
+7. ΕΚΚΙΝΗΣΗ DEVELOPMENT SERVER:
+   pnpm run dev
+
+================================================================================
+                            BACKUP VERIFICATION
+================================================================================
+
+✅ BACKUP INTEGRITY:
+- Αρχείο δημιουργήθηκε επιτυχώς
+- Μέγεθος: 912KB (optimal compression)
+- Περιέχει όλα τα κρίσιμα αρχεία
+- Εξαιρέθηκαν τα μη απαραίτητα αρχεία
+
+✅ PROJECT STRUCTURE PRESERVED:
+- Πλήρης monorepo architecture
+- Όλα τα source files
+- Configuration files
+- Documentation
+
+✅ READY FOR RESTORATION:
+- Backup είναι self-contained
+- Περιλαμβάνει restoration instructions
+- Compatible με όλες τις platforms
+
+================================================================================
+                            BACKUP METADATA
+================================================================================
+
+📅 Created: 11 Ιουλίου 2025, 14:14:15 EEST
+🔧 Project Version: 0.3.0
+📦 Backup Size: 912KB
+📋 Files Count: ~500+ files
+🏗️ Architecture: Monorepo (pnpm workspaces)
+🌐 Type: Full-stack SaaS application
+🎯 Purpose: Meta Ads Campaign Analytics Platform
+
+================================================================================
+                            END OF BACKUP INFORMATION
+================================================================================
+
+✅ Backup completed successfully!
+📋 Ready for restoration on any compatible system
+🔧 All project files and configurations preserved
+📚 Complete documentation included 

@@ -1,0 +1,8 @@
+Campaign Name,Ad Set Name,Ad Name,Impressions,Clicks,Conversions,Spend,CPC,CPM,Date,Age,Gender,Device
+Summer Sale 2024,Age 25-34,Ad 1,15000,450,25,1200,2.67,80.00,2024-06-01,25-34,Male,Mobile
+Summer Sale 2024,Age 25-34,Ad 2,12000,380,20,950,2.50,79.17,2024-06-01,25-34,Female,Mobile
+Summer Sale 2024,Age 35-44,Ad 3,8000,200,12,600,3.00,75.00,2024-06-01,35-44,Male,Desktop
+Brand Awareness Q2,Lookalike 1%,Ad 4,20000,600,35,1800,3.00,90.00,2024-06-02,25-34,Male,Mobile
+Brand Awareness Q2,Lookalike 1%,Ad 5,18000,520,30,1600,3.08,88.89,2024-06-02,25-34,Female,Mobile
+Product Launch,Interest Based,Ad 6,10000,280,18,850,3.04,85.00,2024-06-03,18-24,Male,Mobile
+Product Launch,Interest Based,Ad 7,9000,240,15,720,3.00,80.00,2024-06-03,18-24,Female,Desktop 
